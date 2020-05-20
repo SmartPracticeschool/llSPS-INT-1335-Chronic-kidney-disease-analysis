@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Chronic kidney disease</title> 
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head>
+<body>
+	<h1 id="g">Chronic kidney disease</h1>
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+		<form action="{{ url_for('predict')}}" method="post">
+		<br><br>
+		<label>Enter BP : </label>&nbsp;&nbsp;<input type="text" name="BP" placeholder="BP" required="required" /><br><br>
+     	<label>Enter SG : </label>&nbsp;&nbsp;<input type="text" name="SG" placeholder="SG" required="required" /><br><br>
+		<label>Enter AL : </label>&nbsp;&nbsp;<input type="text" name="AL" placeholder="AL" required="required" /><br><br>
+		<label>Enter SU : </label>&nbsp;&nbsp;<input type="text" name="SU" placeholder="SU" required="required" />
+      	                 <br><br>
+		  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+		</div>
+		<div class="col-sm-6">
+		<h3 id="gh">OUTPUT</h3>
+		{{ prediction_text }}
+		</div>
+	</div>
+	</div>
+</body>
+</html>
